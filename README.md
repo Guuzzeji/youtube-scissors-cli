@@ -28,7 +28,7 @@ Built on top of another one of my projects, https://github.com/Guuzzeji/yt-sciss
 
 **Example of where to put ffmpeg path**
 
-```json
+```js
 {
     "ffmpeg_path": "Your ffmpeg executable path goes here",
     "hide_ffmpeg": true, // hides ffmpeg logs
