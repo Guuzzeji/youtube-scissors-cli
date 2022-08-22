@@ -1,0 +1,6 @@
+{
+    "ffmpeg_path": "your file path to ffmpeg",
+    "hide_ffmpeg": true,
+    "hide_yt_download": true,
+    "hide_logo": false
+}

@@ -1,0 +1,44 @@
+{
+  "name": "yt-scissors-cli",
+  "version": "1.0.4",
+  "description": "A simple cli-app that allows you to divide a YouTube video into multiple separate videos base on a video's time stamps. Created using FFmpeg, ytd-core, and freetube.",
+  "main": "index.js",
+  "files": [
+    "fetch",
+    "ffmpeg"
+  ],
+  "engines": {
+    "node": ">=12"
+  },
+  "keywords": [
+    "youtube",
+    "download",
+    "video",
+    "ffmpeg"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Guuzzeji/yt-scissors-cli"
+  },
+  "author": "Guuzzeji <gabe.business.code@outlook.com> (https://github.com/Guuzzeji)",
+  "license": "MIT",
+  "dependencies": {
+    "@freetube/yt-comment-scraper": "^6.1.0",
+    "@terascope/fetch-github-release": "^0.8.7",
+    "chalk": "^4.1.2",
+    "figlet": "^1.5.2",
+    "prompts": "^2.4.2",
+    "signale": "^1.4.0",
+    "ytdl-core": "^4.10.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "build": "pkg ."
+  },
+  "bin": "index.js",
+  "pkg": {
+    "assets": "node_modules/**/*",
+    "targets": [ "node14-win-x64","node14-linux-x64","node14-macos-x64" ],
+    "outputPath": "build"
+  }
+}
