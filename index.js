@@ -152,14 +152,12 @@ async function videoProcessing({ save_path, video_path, chapters }) {
     //* Time Stamp
     signale.Fetching("Video data...");
     let timestamps = await getTimeStampList({ url: user_input.url, type: user_input.collect_from });
-    const user_timeStamps = await prompts([
-        {
-            type: 'multiselect',
-            name: 'chapters',
-            message: 'What videos do you want?',
-            choices: timestamps,
-        }
-    ], { onCancel });
+    const user_timeStamps = await prompts({
+        type: 'multiselect',
+        name: 'chapters',
+        message: 'What videos do you want?',
+        choices: timestamps,
+    }, { onCancel });
 
 
     //* Downloading and Cutting Video
