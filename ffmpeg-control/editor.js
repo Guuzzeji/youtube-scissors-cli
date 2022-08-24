@@ -113,7 +113,6 @@ module.exports.trimVideo = async function ({
         fs.unlinkSync("./tmp/input.mp4");
     }
 
-
     //! Videos will be return as arrays with buffer inside
     return SaveVideos;
 };

@@ -29,9 +29,10 @@ module.exports.getVideoLength = async function (url) {
     });
 };
 
-module.exports.basicInfo = async function (url) {
-    let id = ytdl.getURLVideoID(url);
-    return await ytdl.getInfo(id).then(function (info) {
-        return info.videoDetails;
-    });
-};
+//! Not using but good to have
+// module.exports.basicInfo = async function (url) {
+//     let id = ytdl.getURLVideoID(url);
+//     return await ytdl.getInfo(id).then(function (info) {
+//         return info.videoDetails;
+//     });
+// };

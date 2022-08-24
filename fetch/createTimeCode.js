@@ -67,7 +67,7 @@ async function createTimeStamps(url, text) {
                     let replace_timecode = time_code.replaceAll(":", "").trim();
 
                     let json = {
-                        title: lines[i].replaceAll(/[:;~`_+=#%&{}<>*?$!'",]/g, "").replaceAll(replace_timecode, "").trim(),
+                        title: lines[i].replaceAll(/[:;~`_+=#%&{}<>*?$!'"|,]/g, "").replaceAll(replace_timecode, "").trim(),
                         start_time: time_code.trim()
                     };
                     timeStamps.push(json);
