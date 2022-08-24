@@ -171,7 +171,7 @@ async function videoProcessing({ save_path, video_path, chapters }) {
         dl_stream.on("data", function (chunk) {
             if (Config.hide_yt_download == false) {
                 total_chunk += chunk.length;
-                signale.debug("[Dowload-Video-Info] Video Size =", total_chunk);
+                signale.debug("[Dowload-Video-Info] Download Current Size =", total_chunk, "[bytes]", "| Chunk Size =", chunk.length, "[bytes]", "|");
             }
         });
 
