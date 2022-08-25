@@ -9,13 +9,19 @@ A simple cli-app that allows you to divide a YouTube video into multiple separat
 
 ## 💡 Features
 - Can generate either a whole folder of videos or extracte a single video from a YouTube video
+  
 - Can trim / cut a video base on a YouTube video's chapters, description, or comment on the video. 
   - **Important:** Generated time codes from description and comment works about 85% of the time. Make sure video time codes are spaced out and have nothing that would make it hard to find the time codes. There is also a bug with any video that is +10 hours longs, so video length should be below 10 hours.
+
 - Can download videos directly from CLI
   - **Note:** Downloading is slow compare to other YouTube download methods.
+  
   - If you need good download speeds try [pytube](https://github.com/pytube/pytube) or [yt-dlp](https://github.com/yt-dlp/yt-dlp). You can still use this program with other YouTube download methods.
+
 - Can edit already downloaded YouTube videos
+  
 - Simple CLI interface
+  
 - 100% Open Source (MIT license)
 
 
