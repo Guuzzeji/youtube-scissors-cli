@@ -44,6 +44,7 @@ module.exports.trimVideo = async function ({
             //"-c:v", "copy", "-c:a", "copy",
             //"-codec", "copy"
             let args = [
+                "-hide_banner",
                 "-i", path.resolve(videoPath),
                 "-ss", start_time.toString(),
                 "-to", end_time.toString(),
@@ -59,7 +60,7 @@ module.exports.trimVideo = async function ({
             }
 
             if (ffmpegHide == true) {
-                args = args.concat(["-hide_banner", "-loglevel", "error"]);
+                args = args.concat(["-loglevel", "error"]);
             } else {
                 signale.debug("[ffmpeg-input]", args.join(" "), "\n");
             }
