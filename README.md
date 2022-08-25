@@ -10,6 +10,7 @@ A simple CLI app that allows you to divide a YouTube video into multiple separat
 ## 💡 Features
 - Can generate multiple videos or extract a single video, based on a YouTube video's time stamps (time stamps from a comment, video description, or chapters)
   - **Important:** Generated time stamps from the description and comments works about 85% of the time. Make sure the video's time stamps are spaced out and have nothing that would make it hard to find them. There is also a bug with any video that is +10 hours long, so video length should be below 10 hours.
+  
   - **Note:** Make sure the description or comment has a full time stamp list for the best results.
 
 - Can download videos directly from CLI
