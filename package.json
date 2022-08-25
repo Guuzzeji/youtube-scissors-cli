@@ -1,6 +1,6 @@
 {
   "name": "youtube-scissors-cli",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A simple cli-app that allows you to divide a YouTube video into multiple separate videos base on a video's time stamps. Power by pkg and @Guuzzeji yt-scissors npm library",
   "main": "index.js",
   "files": [
