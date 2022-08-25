@@ -66,8 +66,6 @@ A simple cli-app that allows you to divide a YouTube video into multiple separat
 
 ```console
 git clone https://github.com/Guuzzeji/youtube-scissors-cli.git
-```
-```console
 cd youtube-scissors-cli
 ```
 
