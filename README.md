@@ -75,13 +75,11 @@ git clone https://github.com/Guuzzeji/youtube-scissors-cli.git
 cd youtube-scissors-cli
 ```
 
-**(Step 2) Install pkg**
+**(Step 2) Install pkg ([Learn more about pkg](https://github.com/vercel/pkg))**
 
 ```console
 npm install -g pkg
 ```
-- [Learn more about pkg](https://github.com/vercel/pkg)
-
 
 **(Step 3) Then run npm install to install all needed dependencies**
 
