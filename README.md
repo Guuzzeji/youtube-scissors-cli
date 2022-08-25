@@ -58,9 +58,9 @@ A simple cli-app that allows you to divide a YouTube video into multiple separat
 - Have [Node.js](https://nodejs.org/en/) install on your system
 - (Optional) Have [git](https://git-scm.com/downloads) install on your system
 
-### How To Build From Source
-
 ---
+
+### How To Build From Source
 
 **(Step 1) Download the source code and cd into it**
 
@@ -70,7 +70,6 @@ git clone https://github.com/Guuzzeji/youtube-scissors-cli.git
 ```console
 cd youtube-scissors-cli
 ```
----
 
 **(Step 2) Install pkg**
 
@@ -79,22 +78,18 @@ npm install -g pkg
 ```
 - [Learn more about pkg](https://github.com/vercel/pkg)
 
----
 
 **(Step 3) Then run npm install to install all needed dependencies**
 
 ```console
 npm install
 ```
----
 
-**(Step 4) build using npm**
+**(Step 4) Build using npm**
 
 ```console
 npm run build
 ```
-
----
 
 **(Step 5) Setting up config.json**
 
