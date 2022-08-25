@@ -102,14 +102,14 @@ async function videoProcessing({ save_path, video_path, chapters }) {
 
     //* Init user data
     const user_input = await prompts([
-        //Video URL
+        // Video URL
         {
             type: 'text',
             name: 'url',
             message: 'YouTube video URL?',
         },
 
-        //Get data from
+        // Get data from
         {
             type: 'select',
             name: 'collect_from',
@@ -121,14 +121,14 @@ async function videoProcessing({ save_path, video_path, chapters }) {
             ],
         },
 
-        //Download the video
+        // Download YouTube video
         {
             type: 'confirm',
             name: 'download_video',
             message: 'Do you want to download video?',
         },
 
-        //If no download load video from path
+        // If no download load video from path
         {
             type: function (prev) {
                 if (prev == false) {
@@ -140,7 +140,7 @@ async function videoProcessing({ save_path, video_path, chapters }) {
             message: 'File path to already downloaded video?'
         },
 
-        //Save path
+        // Save path
         {
             type: 'text',
             name: 'save_path',
@@ -185,6 +185,7 @@ async function videoProcessing({ save_path, video_path, chapters }) {
         });
 
     } else {
+        // Use ffmpeg with user video
         await videoProcessing({
             video_path: user_input.video_path,
             chapters: user_timeStamps.chapters,

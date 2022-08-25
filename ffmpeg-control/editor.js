@@ -54,7 +54,7 @@ module.exports.trimVideo = async function ({
                 path.resolve(path.join("tmp", "output.mp4"))
             ];
 
-            //Add more onto args for ffmpeg
+            //Add more onto args for ffmpeg ffmpegCmds is an array
             if (ffmpegCmds != undefined) {
                 args = args.concat(ffmpegCmds);
             }

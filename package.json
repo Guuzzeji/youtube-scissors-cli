@@ -14,7 +14,9 @@
     "youtube",
     "download",
     "video",
-    "ffmpeg"
+    "ffmpeg",
+    "cli",
+    "video-processing"
   ],
   "repository": {
     "type": "git",
