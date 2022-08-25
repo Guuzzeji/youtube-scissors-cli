@@ -64,32 +64,32 @@ function CLIlogo() {
 
 async function videoProcessing({ save_path, video_path, chapters }) {
 
-    async function ffmpegVideo(video, chapter) {
-        signale.Loading("Cutting out videos...");
+    //FFmpeg cuting videos
+    signale.Loading("Cutting out videos...");
 
-        let videos_buffer = await cutVideo({
-            video: path.resolve(video),
-            ffmpegPath: path.resolve(Config.ffmpeg_path),
-            ffmpegOptions: {
-                ffmpegHide: Config.hide_ffmpeg,
-            },
-            chapters: chapter
-        });
-
-        return videos_buffer;
-    }
-
-    let edit_video_list = await ffmpegVideo(video_path, chapters);
+    let edit_video_list = await cutVideo({
+        video: path.resolve(video_path),
+        ffmpegPath: path.resolve(Config.ffmpeg_path),
+        ffmpegOptions: {
+            ffmpegHide: Config.hide_ffmpeg,
+        },
+        chapters: chapters
+    });
 
     // Saving videos
-    signale.success(`Saved videos to "${path.resolve(save_path)}"`);
-
     for (let x = 0; x < edit_video_list.length; x++) {
-        let title_video = edit_video_list[x].title + ".mp4";
-        fs.writeFileSync(path.resolve(path.join(save_path, title_video)), edit_video_list[x].videoData);
+        try {
+            let title_video = edit_video_list[x].title + ".mp4";
+            fs.writeFileSync(path.resolve(path.join(save_path, title_video)), edit_video_list[x].videoData);
+        } catch (error) {
+            signale.fatal("Could not save video!");
+            signale.debug(error);
+            process.exit();
+        }
     }
 
     // On Exit
+    signale.success(`Saved videos to "${path.resolve(save_path)}"`);
     cleanFiles();
     process.exit();
 }
