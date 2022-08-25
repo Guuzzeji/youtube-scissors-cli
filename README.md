@@ -59,7 +59,7 @@ A simple CLI app that allows you to divide a YouTube video into multiple separat
 
 ## 🛠️ Developer Instructuions (Build From Source)
 
-> Most users do not need to build YouTube-Scissors CLI. You can download the builds from [here](https://github.com/Guuzzeji/yt-scissors). 
+> Most users do not need to build from source. You can download the builds from [here](https://github.com/Guuzzeji/yt-scissors). 
 
 > If you are looking for an API / wrapper library for this CLI app, look [here](https://github.com/Guuzzeji/yt-scissors).
 
