@@ -34,15 +34,14 @@ async function createTimeStamps(url, text) {
         if (lines[i].search(":") != -1 && lines[i].match(/\d+/)) {
 
             //Grabs what it thinks it is timestamp and cleans it
-            let time_code = lines[i].replace(/[^0-9:]/, "");
-            time_code = time_code.replaceAll(/[a-zA-Z()'"]/g, "").trim();
+            let time_code = lines[i].replaceAll(/[a-zA-Z();~`_+=#%&{}<>*?$!'"|,'",()]/g, "").trim();
 
-            //remove if ":" is on first number 
+            //remove if ":" is first in string 
             if (time_code[0] == ":") {
                 time_code = time_code.replace(":", "").trim();
             }
 
-            //checks if it is a timestamp
+            //checks if it is a timestamp and remove everything else
             if (time_code[time_code.search(":")] != undefined && time_code[(time_code.search(":") - 1)] != undefined) {
 
                 //Check for hours
@@ -59,7 +58,6 @@ async function createTimeStamps(url, text) {
                 } else {
                     time_code = time_code.slice(0, time_code.search(":") + 3);
                     time_code = time_code.slice((time_code.search(":") - 1), time_code.length);
-
                 }
 
                 //Export to json
@@ -67,12 +65,11 @@ async function createTimeStamps(url, text) {
                     let replace_timecode = time_code.replaceAll(":", "").trim();
 
                     let json = {
-                        title: lines[i].replaceAll(/[:;~`_+=#%&{}<>*?$!'",]/g, "").replaceAll(replace_timecode, "").trim(),
+                        title: lines[i].replaceAll(/[:;~`_+=#%&{}<>*?$!'"|,-,()]/g, "").replaceAll(replace_timecode, "").trim(),
                         start_time: time_code.trim()
                     };
                     timeStamps.push(json);
                 }
-
             }
         }
     }
