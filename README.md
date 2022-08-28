@@ -45,6 +45,20 @@ A simple CLI app that allows you to divide a YouTube video into multiple separat
 }
 ```
 
+## 🕹️ Usage 
+
+1. Find a YouTube video that you want to extract videos from
+   - Make sure the YouTube video has either chapters or time stamps in the description or comments section
+  
+   - **Note:** For comments, follow this [tutorial](https://github.com/Guuzzeji/youtube-scissors-cli/tree/refactor/command-interface#helpful-infomation) to figure out how to get a YouTube comment's URL.
+
+   - **Tip:** Make sure the description or comment has a full time stamp list for the best results.
+
+2. Run YouTube-Scissors CLI and paste the YouTube video's URL or the YouTube comment's URL
+
+3. Then enter in what you want for each prompt
+   - **Important:** When extracting multiple videos, YouTube-scissors will NOT create a folder for all the videos to be saved in. You must create an empty folder beforehand and save all the videos there.
+
 
 ## 📷 Screenshots
 
