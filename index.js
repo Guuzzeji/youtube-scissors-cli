@@ -65,7 +65,7 @@ function CLIlogo() {
 async function videoProcessing({ save_path, video_path, chapters }) {
 
     //FFmpeg cuting videos
-    signale.Loading("Cutting out videos...");
+    signale.Loading("FFmpeg");
 
     let edit_video_list = await cutVideo({
         video: path.resolve(video_path),
@@ -113,11 +113,11 @@ async function videoProcessing({ save_path, video_path, chapters }) {
         {
             type: 'select',
             name: 'collect_from',
-            message: `How do you want to extract video time stamps?`,
+            message: `Select how you want to extract the time stamps`,
             choices: [
-                { title: 'chapters', value: 'chapters' },
-                { title: 'comment', value: 'comment' },
-                { title: 'description', value: 'description' }
+                { title: 'From chapters', value: 'chapters' },
+                { title: 'From comment', value: 'comment' },
+                { title: 'From description', value: 'description' }
             ],
         },
 
@@ -125,7 +125,7 @@ async function videoProcessing({ save_path, video_path, chapters }) {
         {
             type: 'confirm',
             name: 'download_video',
-            message: 'Do you want to download video?',
+            message: 'Do you want to download the YouTube video?',
         },
 
         // If no download load video from path
@@ -137,32 +137,32 @@ async function videoProcessing({ save_path, video_path, chapters }) {
                 return null;
             },
             name: 'video_path',
-            message: 'File path to already downloaded video?'
+            message: 'File path to already downloaded YouTube video'
         },
 
         // Save path
         {
             type: 'text',
             name: 'save_path',
-            message: 'Where do you want to save the videos?',
+            message: 'Where do you want to save everything?',
         }
     ], { onCancel });
 
 
     //* Time Stamp
-    signale.Fetching("Video data...");
+    signale.Fetching(`YouTube video's ${user_input.collect_from}`);
     let timestamps = await getTimeStampList({ url: user_input.url, type: user_input.collect_from });
     const user_timeStamps = await prompts({
         type: 'multiselect',
         name: 'chapters',
-        message: 'What videos do you want?',
+        message: 'Select what videos you want to save',
         choices: timestamps,
     }, { onCancel });
 
 
     //* Downloading and Cutting Video
     if (user_input.download_video == true) {
-        signale.Fetching("Downloading video...");
+        signale.Fetching("Downloading YouTube video");
 
         let dl_stream = ytdl(user_input.url);
         dl_stream.pipe(fs.createWriteStream("./tmp/input.mp4"));
