@@ -34,7 +34,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "build": "pkg ."
+    "build": "pkg . --compress"
   },
   "bin": "index.js",
   "pkg": {
