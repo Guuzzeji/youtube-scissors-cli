@@ -1,0 +1,43 @@
+name: "tagged-release"
+
+on: workflow_dispatch
+
+# on:
+#   push:
+#     tags:
+#       - "v*"
+
+jobs:
+  build-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set env
+        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install NPM dependencies
+        run: npm ci
+
+      - name: NPM install build tools
+        run: npm install pkg
+
+      - name: Build project assets
+        run: npm run build
+
+      - name: Create zip files
+      - uses: vimtor/action-zip@v1
+        with:
+          files: ./config.json ./build/youtube-scissors-cli-win.exe
+          dest: win-${{ env.RELEASE_VERSION }}.zip
+
+      - uses: vimtor/action-zip@v1
+        with:
+          files: ./config.json ./build/youtube-scissors-cli-macos
+          dest: macos-${{ env.RELEASE_VERSION }}.zip
+
+      - uses: vimtor/action-zip@v1
+        with:
+          files: ./config.json ./build/youtube-scissors-cli-linux
+          dest: linux-${{ env.RELEASE_VERSION }}.zip
