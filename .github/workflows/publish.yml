@@ -35,5 +35,5 @@ jobs:
         uses: montudor/action-zip@v1
 
       - name: Zip windows build
-        run: zip -qq -r win.zip build/youtube-scissors-win config.json
+        run:  zip -qq -r win${{env.RELEASE_VERSION}}.zip . -i build/youtube-scissors-win config.json
         working-directory: build
