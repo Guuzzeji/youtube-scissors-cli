@@ -49,7 +49,7 @@ jobs:
         # https://github.com/marvinpinto/action-automatic-releases
 
       - name: Release build
-      - uses: "marvinpinto/action-automatic-releases@latest"
+        uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GIT_TOKEN }}"
           automatic_release_tag: "latest"
