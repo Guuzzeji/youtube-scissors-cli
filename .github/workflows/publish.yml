@@ -31,18 +31,9 @@ jobs:
       - name: Build project assets
         run: npm run build
 
-      - name: Create zip files
-      - uses: vimtor/action-zip@v1
-        with:
-          files: config.json build/youtube-scissors-cli-win.exe
-          dest: win.zip
+      - name: Install zip git-action package
+        uses: montudor/action-zip@v1
 
-      - uses: vimtor/action-zip@v1
-        with:
-          files: config.json build/youtube-scissors-cli-macos
-          dest: macos.zip
-
-      - uses: vimtor/action-zip@v1
-        with:
-          files: config.json build/youtube-scissors-cli-linux
-          dest: linux.zip
+      - name: Zip windows build
+        run: zip -qq -r win.zip build/youtube-scissors-win config.json
+        working-directory: build
