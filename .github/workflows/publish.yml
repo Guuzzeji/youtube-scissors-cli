@@ -1,7 +1,5 @@
 name: tagged-release
 
-# on: workflow_dispatch
-
 on:
   push:
     tags:
@@ -35,13 +33,17 @@ jobs:
         uses: montudor/action-zip@v1
 
       - name: Zip windows build
-        run:  zip -qq -r win${{env.RELEASE_VERSION}}.zip . -i build/youtube-scissors-cli-win config.json
+        run:  zip -qq -r win-${{env.RELEASE_VERSION}}.zip . -i build/youtube-scissors-cli-win config.json
         working-directory: build
 
       - name: Zip macos build
-        run:  zip -qq -r macos${{env.RELEASE_VERSION}}.zip . -i build/youtube-scissors-cli-macos config.json
+        run:  zip -qq -r macos-${{env.RELEASE_VERSION}}.zip . -i build/youtube-scissors-cli-macos config.json
         working-directory: build
 
       - name: Zip linux build
-        run:  zip -qq -r linux${{env.RELEASE_VERSION}}.zip . -i build/youtube-scissors-cli-linux config.json
+        run:  zip -qq -r linux-${{env.RELEASE_VERSION}}.zip . -i build/youtube-scissors-cli-linux config.json
         working-directory: build
+
+        #Todo Create release changelog and create release
+        # https://github.com/marketplace/actions/release-changelog-builder
+        # https://github.com/marvinpinto/action-automatic-releases
