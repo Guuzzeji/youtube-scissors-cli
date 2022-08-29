@@ -20,9 +20,6 @@ jobs:
         with:
           node-version: '14.x'
 
-      - name: Install zip git-action package
-        uses: montudor/action-zip@v1
-
       - name: Install NPM dependencies
         run: npm ci
 
@@ -32,17 +29,23 @@ jobs:
       - name: Building executables
         run: npm run build
 
+      - name: Install zip git-action package
+        uses: montudor/action-zip@v1
+
       - name: Zip windows build
-        run: mv build/youtube-scissors-cli-win.exe ~/
-        run: zip -qq -r win-${{env.RELEASE_VERSION}}.zip . -i youtube-scissors-cli-win.exe config.json
+        run: |
+          mv build/youtube-scissors-cli-win.exe ~/
+          zip -qq -r win-${{env.RELEASE_VERSION}}.zip . -i youtube-scissors-cli-win.exe config.json
 
       - name: Zip macos build
-        run: mv build/youtube-scissors-cli-macos~/
-        run:  zip -qq -r macos-${{env.RELEASE_VERSION}}.zip . -i youtube-scissors-cli-macos config.json
+        run: | 
+          mv build/youtube-scissors-cli-macos~/
+          zip -qq -r macos-${{env.RELEASE_VERSION}}.zip . -i youtube-scissors-cli-macos config.json
 
       - name: Zip linux build
-        run: mv build/youtube-scissors-cli-linux ~/
-        run:  zip -qq -r linux-${{env.RELEASE_VERSION}}.zip . -i youtube-scissors-cli-linux config.json
+        run: |
+          mv build/youtube-scissors-cli-linux ~/
+          zip -qq -r linux-${{env.RELEASE_VERSION}}.zip . -i youtube-scissors-cli-linux config.json
 
       - name: Release build
         uses: "marvinpinto/action-automatic-releases@latest"
