@@ -8,7 +8,7 @@ on: workflow_dispatch
 #       - "v*"
 
 jobs:
-  build-release:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Set env
