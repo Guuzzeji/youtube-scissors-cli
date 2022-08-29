@@ -1,6 +1,6 @@
 name: tagged-release
 
-on: workflow_dispatch
+on: workflow_run
 
 # on:
 #   push:
