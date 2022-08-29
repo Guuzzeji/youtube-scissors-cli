@@ -1,0 +1,58 @@
+name: tagged-release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build-to-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set env
+        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+
+      - name: Install NPM dependencies
+        run: npm ci
+
+      - name: NPM install build tools
+        run: npm install pkg
+
+      - name: Building executables
+        run: npm run build
+
+      - name: Install zip git-action package
+        uses: montudor/action-zip@v1
+
+      - name: Zip windows build
+        run: |
+          mv ./build/youtube-scissors-cli-win.exe .
+          zip -qq -r win-${{env.RELEASE_VERSION}}.zip . -i youtube-scissors-cli-win.exe config.json
+
+      - name: Zip macos build
+        run: | 
+          mv ./build/youtube-scissors-cli-macos .
+          zip -qq -r macos-${{env.RELEASE_VERSION}}.zip . -i youtube-scissors-cli-macos config.json
+
+      - name: Zip linux build
+        run: |
+          mv ./build/youtube-scissors-cli-linux .
+          zip -qq -r linux-${{env.RELEASE_VERSION}}.zip . -i youtube-scissors-cli-linux config.json
+
+      - name: Release build
+        uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GIT_TOKEN }}"
+          prerelease: false
+          files: |
+            ./linux-${{env.RELEASE_VERSION}}.zip
+            ./macos-${{env.RELEASE_VERSION}}.zip
+            ./win-${{env.RELEASE_VERSION}}.zip
