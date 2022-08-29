@@ -20,17 +20,17 @@ jobs:
         with:
           node-version: '14.x'
 
+      - name: Install zip git-action package
+        uses: montudor/action-zip@v1
+
       - name: Install NPM dependencies
         run: npm ci
 
       - name: NPM install build tools
         run: npm install pkg
 
-      - name: Build project assets
+      - name: Building executables
         run: npm run build
-
-      - name: Install zip git-action package
-        uses: montudor/action-zip@v1
 
       - name: Zip windows build
         run:  zip -qq -r win-${{env.RELEASE_VERSION}}.zip . -i build/youtube-scissors-cli-win config.json
@@ -47,3 +47,15 @@ jobs:
         #Todo Create release changelog and create release
         # https://github.com/marketplace/actions/release-changelog-builder
         # https://github.com/marvinpinto/action-automatic-releases
+
+      - name: Release build
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GIT_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Development Build"
+          files: |
+            linux-${{env.RELEASE_VERSION}}.zip
+            macos-${{env.RELEASE_VERSION}}.zip
+            win-${{env.RELEASE_VERSION}}.zip
