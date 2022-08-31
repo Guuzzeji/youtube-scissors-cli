@@ -57,6 +57,7 @@ jobs:
         with:
           repo_token: "${{ secrets.GIT_TOKEN }}"
           prerelease: false
+          automatic_release_tag: "${{ github.event.inputs.version }}"
           files: |
             ./linux-${{ github.event.inputs.version }}.zip
             ./macos-${{ github.event.inputs.version }}.zip
