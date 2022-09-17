@@ -40,17 +40,17 @@ jobs:
       - name: Zip windows build
         run: |
           mv ./build/youtube-scissors-cli-win.exe .
-          zip -qq -r win-${{ github.event.inputs.version }}.zip . -i youtube-scissors-cli-win.exe config.json
+          zip -qq -r youtube-scissors-cli-win-${{ github.event.inputs.version }}.zip . -i youtube-scissors-cli-win.exe config.json
 
       - name: Zip macos build
         run: | 
           mv ./build/youtube-scissors-cli-macos .
-          zip -qq -r macos-${{ github.event.inputs.version }}.zip . -i youtube-scissors-cli-macos config.json
+          zip -qq -r youtube-scissors-cli-macos-${{ github.event.inputs.version }}.zip . -i youtube-scissors-cli-macos config.json
 
       - name: Zip linux build
         run: |
           mv ./build/youtube-scissors-cli-linux .
-          zip -qq -r linux-${{ github.event.inputs.version }}.zip . -i youtube-scissors-cli-linux config.json
+          zip -qq -r youtube-scissors-cli-linux-${{ github.event.inputs.version }}.zip . -i youtube-scissors-cli-linux config.json
 
       - name: Release build
         uses: "marvinpinto/action-automatic-releases@latest"
@@ -59,6 +59,6 @@ jobs:
           prerelease: false
           automatic_release_tag: "${{ github.event.inputs.version }}"
           files: |
-            ./linux-${{ github.event.inputs.version }}.zip
-            ./macos-${{ github.event.inputs.version }}.zip
-            ./win-${{ github.event.inputs.version }}.zip
+            ./youtube-scissors-cli-linux-${{ github.event.inputs.version }}.zip
+            ./youtube-scissors-cli-macos-${{ github.event.inputs.version }}.zip
+            ./youtube-scissors-cli-win-${{ github.event.inputs.version }}.zip
