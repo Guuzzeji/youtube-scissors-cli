@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          token: ${{ secrets.GIH_TOKEN }}
+          token: ${{ secrets.GIT_TOKEN }}
       - run: git config --global user.name ${{ secrets.GH_USERNAME }}
       - run: git config --global user.email ${{ secrets.GH_EMAIL }}
       - uses: actions/setup-node@v2
