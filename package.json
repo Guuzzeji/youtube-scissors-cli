@@ -30,7 +30,7 @@
     "figlet": "^1.5.2",
     "prompts": "^2.4.2",
     "signale": "^1.4.0",
-    "ytdl-core": "^4.11.1"
+    "ytdl-core": "^4.11.2"
   },
   "scripts": {
     "start": "node index.js",
