@@ -31,9 +31,9 @@ A simple CLI app that allows you to divide a YouTube video into multiple separat
 
 2. Once you downloaded the YouTube-Scissors-CLI executable, download ffmpeg. [FFmpeg Downloads](https://ffmpeg.org/download.html)
    
-3. After downloading ffmpeg, open up the config.json file and paste the path to where you have saved the ffmpeg executable. Make sure you put config.json in the same directory as your executable. 
+3. After downloading ffmpeg, open up the config.json file and paste the path to where you have saved the ffmpeg executable. Make sure you put config.json in the same directory as your YouTube-Scissors executable. 
 
-4. Additionally, you can edit config.json to your liking. 
+4. Edit config.json to your liking. 
 
 **Example of How config.json is Setup**
 ```js
