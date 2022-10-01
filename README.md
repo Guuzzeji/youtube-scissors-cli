@@ -70,10 +70,13 @@ A simple CLI app that allows you to divide a YouTube video into multiple separat
 
 3. Then enter in what you want for each prompt
    - **Important:** When extracting multiple videos, YouTube-scissors will NOT create a folder for all the videos to be saved in. You must create an empty folder beforehand and save all the videos there.
-
+   
+## 🎥 Video Demo
+<p align="center">
+    <a href="https://www.youtube.com/watch?v=AN4oikwEpWw"><img src="https://img.youtube.com/vi/AN4oikwEpWw/0.jpg"><a>
+</p>
 
 ## 📷 Screenshots
-
 <p align="center">
     <img src="./assets/screenshot.png" height="35%">
 </p>
