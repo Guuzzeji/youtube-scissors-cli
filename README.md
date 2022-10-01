@@ -73,7 +73,7 @@ A simple CLI app that allows you to divide a YouTube video into multiple separat
    
 ## 🎥 Video Demo
 <p align="center">
-    <a href="https://www.youtube.com/watch?v=AN4oikwEpWw"><img src="https://img.youtube.com/vi/AN4oikwEpWw/0.jpg"><a>
+    <a href="https://www.youtube.com/watch?v=AN4oikwEpWw"><img src="https://img.youtube.com/vi/AN4oikwEpWw/maxresdefault.jpg"><a>
 </p>
 
 ## 📷 Screenshots
