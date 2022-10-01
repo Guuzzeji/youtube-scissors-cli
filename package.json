@@ -8,7 +8,7 @@
     "ffmpeg-control"
   ],
   "engines": {
-    "node": ">=12"
+    "node": ">=14"
   },
   "keywords": [
     "youtube",
