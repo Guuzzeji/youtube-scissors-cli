@@ -4,6 +4,15 @@
 
 <h1 align="center">YouTube-Scissors CLI</h1>
 
+<p align="center">
+    <img alt="GitHub" src="https://img.shields.io/github/license/Guuzzeji/youtube-scissors-cli">
+    <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/Guuzzeji/youtube-scissors-cli">
+    <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/downloads/Guuzzeji/youtube-scissors-cli/latest/total">
+    <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/Guuzzeji/youtube-scissors-cli">
+    <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Guuzzeji/youtube-scissors-cli?style=social">
+    <img alt="Twitter URL" src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2FGuuzzeji%2Fyoutube-scissors-cli%2F">
+</p>
+
 A simple CLI app that allows you to divide a YouTube video into multiple separate videos base on a video's time stamps. This project is built on top of another one of my projects, [yt-scissors](https://github.com/Guuzzeji/yt-scissors). 
 
 
