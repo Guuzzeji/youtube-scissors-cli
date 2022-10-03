@@ -141,7 +141,7 @@ cd build
 
 - Test and make sure your changes can still create a functional executable file. (check build guide above)
   
-- Create a pull request here
+- Create a pull request
   - Make sure to add a description of what changes you have made and why your changes are important.
 
 ---
