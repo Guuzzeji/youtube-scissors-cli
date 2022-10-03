@@ -135,7 +135,7 @@ cd build
 
 - Fork the main branch
 
-- Open your fork and add your changes / features
+- Open your fork and add your changes / features / bug fixes
 
 - **(Important)** run `npm test` if you made any changes to fetch folder or fetch files. Doing this to make sure everything is working properly when grabbing data and parsing it from YouTube
 
@@ -143,8 +143,6 @@ cd build
   
 - Create a pull request here
   - Make sure to add a description of what changes you have made and why your changes are important.
-  
-  -  Add me (@Guuzzeji) to the pull request, add me as a reviewer. This will notify me that you made a pull request and allow me to review the changes you made.
 
 ---
 
