@@ -144,7 +144,7 @@ cd build
 - Create a pull request here
   - Make sure to add a description of what changes you have made and why your changes are important.
   
-  -  Add me (@Guuzzeji) to the pull request, add me as a reviewer. This notify me that you made a pull request and allow me to review the changes you made.
+  -  Add me (@Guuzzeji) to the pull request, add me as a reviewer. This will notify me that you made a pull request and allow me to review the changes you made.
 
 ---
 
