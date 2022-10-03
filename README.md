@@ -130,7 +130,6 @@ cd build
 ```
 - cd into the build directory and copy the config.json file into it. Make sure you edit the config.json file to your liking and type in the path to your ffmpeg executable.
 
----
 
 ## 🫶 How to Contribute
 
@@ -147,6 +146,7 @@ cd build
   
   -  Add me (@Guuzzeji) to the pull request, add me as a reviewer. This notify me that you made a pull request and allow me to review the changes you made.
 
+---
 
 ### Helpful Infomation
 
