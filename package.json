@@ -45,5 +45,8 @@
       "node16-macos-x64"
     ],
     "outputPath": "build"
+  },
+  "devDependencies": {
+    "jest": "^29.1.2"
   }
 }
