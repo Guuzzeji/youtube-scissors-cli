@@ -132,13 +132,15 @@ cd build
 
 ---
 
-## How to Contribute
+## 🫶 How to Contribute
 
 - Fork the main branch
 
 - Open your fork and add your changes / features
 
 - (Optional but important) run `npm test` if you made any changes to fetch folder or fetch files. Doing this to make sure everything is working properly when grabbing data and parsing it from YouTube
+
+- Test and make sure your changes can still create a functional executable file. (check build guide above)
   
 - Create a pull request here
   - Make sure to add a description of what changes you have made and why your changes are important.
