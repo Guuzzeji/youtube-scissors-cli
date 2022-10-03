@@ -15,8 +15,9 @@ const fs = require('fs');
  * ! IMPORTANT: Never change test data after modifying 
  * !    fetch files. Only add or change test data 
  * !    on a stable version of YouTube-Scissors-CLI
- * Used to create test data for different youtube videos 
- * All test data is stored in test-data.json
+ * 
+ * - Used to create test data for different youtube videos 
+ * - All test data is stored in test-data.json
  */
 async function main({ url, type, pos }) {
 
