@@ -4,11 +4,9 @@ const fs = require('fs');
 
 /**
  * ! How to use
- * (1) Add your url to the json file like the other videos
- * (2) Note where you put that url and what position it is in the array
- * (3) Copy the url to the main function and specify how you 
- *      want to extract the time stamp, as well as what position it is in the array
- * (4) Then run the js file
+ * (1) Copy the url to the main function and specify how you 
+ *      want to extract the time stamp
+ * (2) Then run the js file
  */
 
 /**
@@ -19,7 +17,7 @@ const fs = require('fs');
  * - Used to create test data for different youtube videos 
  * - All test data is stored in test-data.json
  */
-async function main({ url, type, pos }) {
+async function main({ url, type }) {
 
     let data = await getTimeStamp({
         url: url,
@@ -27,13 +25,22 @@ async function main({ url, type, pos }) {
     });
 
     if (type == "comment") {
-        testDataJSON.comments[pos].result = data;
+        testDataJSON.comments.push({
+            url: url,
+            result: data
+        });
 
     } else if (type == "description") {
-        testDataJSON.description[pos].result = data;
+        testDataJSON.description.push({
+            url: url,
+            result: data
+        });
 
     } else if (type == "chapters") {
-        testDataJSON.chapter[pos].result = data;
+        testDataJSON.chapter.push({
+            url: url,
+            result: data
+        });
     }
 
     let stringJson = JSON.stringify(testData);
@@ -44,5 +51,4 @@ async function main({ url, type, pos }) {
 main({
     url: "",
     type: "",
-    pos: 0
 });
