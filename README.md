@@ -139,7 +139,7 @@ cd build
 
 - **(Important)** Run `npm test` if you made any changes to fetch folder or fetch files. You need to do this to make sure everything is working properly when grabbing data and parsing it from YouTube
 
-- Test and make sure your changes can still create a functional executable file. (check the build guide above)
+- **(Important)** Test and make sure your changes can still create a functional executable file. (check the build guide above)
   
 - Create a pull request
   - Make sure to add a description of what changes you have made and why your changes are important.
