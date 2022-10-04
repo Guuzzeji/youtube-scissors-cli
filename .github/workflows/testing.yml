@@ -4,7 +4,7 @@ on: [pull_request, workflow_dispatch]
 
 jobs:
   Test:
-    name: Testing Node.js
+    name: Testing Node.js Functions
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-node@v2
