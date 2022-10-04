@@ -3,7 +3,7 @@ name: "Testing"
 on: [pull_request, workflow_dispatch]
 
 jobs:
-  test:
+  Test:
     name: Update ytdl-core package
     runs-on: ubuntu-latest
     steps:
