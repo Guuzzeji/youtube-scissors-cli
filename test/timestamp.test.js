@@ -5,6 +5,7 @@ const testData = require('./test-data.json');
  * ! Testing for timestamps generate function
  * - Test all 3 types comments, description, and chapters
  * - Add testing data comes from test-data.json
+ * 
  * * Note: This these testing can be upscale to work with other videos, 
  * *    you just need to add more videos to the data base
  */
