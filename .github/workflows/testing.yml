@@ -1,0 +1,21 @@
+name: "Testing"
+
+on:
+  workflow_dispatch
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    name: Update ytdl-core package
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+      
+      - name: "Install All Packages"
+        run: npm cli
+      
+      - name: "Run Test"
+      - run: npm test
