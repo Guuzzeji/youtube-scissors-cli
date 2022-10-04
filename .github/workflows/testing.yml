@@ -15,4 +15,4 @@ jobs:
         run: npm cli
       
       - name: "Run Test"
-      - run: npm test
+        run: npm test
