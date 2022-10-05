@@ -11,6 +11,11 @@ jobs:
         with:
           node-version: '15.x'
       
-      - run: npm install
-      - run: npm install pkg
-      - run: npm run build
+      # Applying https://stackoverflow.com/questions/58423725/github-actions-not-working-after-npm-start
+      - name: Install and Run Build
+        run: |
+          npm ci
+          npm install pkg
+          npm run build
+        env:
+          CI: true
