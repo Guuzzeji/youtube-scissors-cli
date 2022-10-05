@@ -130,6 +130,20 @@ cd build
 ```
 - cd into the build directory and copy the config.json file into it. Make sure you edit the config.json file to your liking and type in the path to your ffmpeg executable.
 
+
+## 🤝 How to Contribute
+
+- Fork the main branch
+
+- Open your fork and add your changes / features / bug fixes
+
+- **(Important)** Run `npm test` if you made any changes to fetch folder or fetch files. You need to do this to make sure everything is working properly when grabbing data and parsing it from YouTube
+
+- **(Important)** Test and make sure your changes can still create a functional executable file. (check the build guide above)
+  
+- Create a pull request
+  - Make sure to add a description of what changes you have made and why your changes are important.
+
 ---
 
 ### Helpful Infomation

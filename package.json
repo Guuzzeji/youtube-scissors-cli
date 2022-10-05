@@ -34,7 +34,8 @@
   },
   "scripts": {
     "start": "node index.js",
-    "build": "pkg . --compress"
+    "build": "pkg . --compress",
+    "test": "jest"
   },
   "bin": "index.js",
   "pkg": {
@@ -45,5 +46,8 @@
       "node16-macos-x64"
     ],
     "outputPath": "build"
+  },
+  "devDependencies": {
+    "jest": "^29.1.2"
   }
 }

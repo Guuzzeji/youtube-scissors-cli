@@ -1,0 +1,24 @@
+name: "Test Build"
+
+on: pull_request
+
+jobs:
+  Test:
+    name: Testing Build to Executables
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '15.x'
+         
+      # (Works) Using https://courses.cs.northwestern.edu/394/guides/github-actions-setup.php
+      # Need add actions/checkout@v2 to file
+      - name: Install NPM dependencies
+        run: npm ci
+
+      - name: NPM install build tools
+        run: npm install pkg
+
+      - name: Building executables
+        run: npm run build
