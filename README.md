@@ -131,7 +131,7 @@ cd build
 - cd into the build directory and copy the config.json file into it. Make sure you edit the config.json file to your liking and type in the path to your ffmpeg executable.
 
 
-## 🫶 How to Contribute
+## 🤝 How to Contribute
 
 - Fork the main branch
 
