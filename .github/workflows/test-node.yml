@@ -12,7 +12,7 @@ jobs:
           node-version: '15.x'
       
       - name: "Install All Packages"
-        run: npm cli
+        run: npm install
       
       - name: "Run Test"
         run: npm test
