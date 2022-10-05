@@ -1,6 +1,6 @@
 name: "Testing Node.js"
 
-on: [pull_request, workflow_dispatch]
+on: [pull_request, push]
 
 jobs:
   Test:
@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v2
         with:
-          node-version: '15.x'
+          node-version: '14.x'
       
       - name: "Install All Packages"
         run: npm install
