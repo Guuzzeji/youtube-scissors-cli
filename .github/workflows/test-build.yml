@@ -10,10 +10,10 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
-          node-version: '14.x'
+          node-version: '15.x'
          
       # (Works) Using https://courses.cs.northwestern.edu/394/guides/github-actions-setup.php
-      # Need to set node version to v14.x
+      # Need add actions/checkout@v2 to file
       - name: Install NPM dependencies
         run: npm ci
 
