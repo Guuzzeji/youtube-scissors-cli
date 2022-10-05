@@ -11,11 +11,6 @@ jobs:
         with:
           node-version: '15.x'
       
-      - name: Install NPM dependencies
-        run: npm install
-
-      - name: NPM install build tools
-        run: npm install pkg
-
-      - name: Building executables
-        run: npm run build
+      - run: npm install
+      - run: npm install pkg
+      - run: npm run build
