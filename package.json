@@ -48,6 +48,6 @@
     "outputPath": "build"
   },
   "devDependencies": {
-    "jest": "^29.2.2"
+    "jest": "^29.3.1"
   }
 }
