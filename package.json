@@ -27,7 +27,7 @@
   "dependencies": {
     "@freetube/yt-comment-scraper": "^6.2.0",
     "chalk": "^4.1.2",
-    "figlet": "^1.5.2",
+    "figlet": "^1.6.0",
     "prompts": "^2.4.2",
     "signale": "^1.4.0",
     "ytdl-core": "^4.11.2"
